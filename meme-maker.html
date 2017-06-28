@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+<head> 
+<title>Simple meme maker</title>
+<meta name = "viewport" content = "width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="fileManage.js"></script>
+</head>
+
+<body>
+	<h1>Welcome to meme-maker!!</h1>
+	<div>
+		<div>
+			<form action="">
+				Background image
+				<input type="file" id="file" onchange="handleFileSelect(event)" />
+				<br>
+				Top Line
+				<input type="text" id="topLine" name="topLine" onchange="handleTextChange(event)">
+				<br>
+				Bottom Line
+				<input type="text" id="bottomLine" name="bottomLine" onchange="handleTextChange(event)">
+				<br>
+				<button name="submitButton" onclick="handleSubmit(event)">Submit</button>
+			</form>
+		</div>
+	</div>
+	<canvas id="canvas" width="500" height="500"></canvas>
+</body>
+</html>
