@@ -4,25 +4,31 @@
 <title>Simple meme maker</title>
 <meta name = "viewport" content = "width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <script type="text/javascript" src="fileManage.js"></script>
+<link rel="stylesheet" href="main.css">
 </head>
 
 <body>
-	<h1>Welcome to meme-maker!!</h1>
-	<div>
-		<div>
-			<form action="">
-				Background image
-				<input type="file" id="file" onchange="handleFileSelect(event)" />
-				<br>
-				Top Line
-				<input type="text" id="topLine" name="topLine" onchange="handleTextChange(event)">
-				<br>
-				Bottom Line
-				<input type="text" id="bottomLine" name="bottomLine" onchange="handleTextChange(event)">
-				<br>
-				<button name="submitButton" onclick="handleSubmit(event)">Submit</button>
-			</form>
-		</div>
+	<h1>Welcome to meme-maker!</h1>
+	<div class="container">
+		<form>
+			<ul class="flex-outer">
+				<li>
+					<label>Background image</label>
+					<input type="file" id="file" onchange="handleFileSelect(event)" />
+				</li>
+				<li>
+					<label>Top Line</label>
+					<input type="text" id="topLine" name="topLine" onchange="handleTextChange(event)">
+				</li>
+				<li>
+					<label>Bottom Line</label>
+					<input type="text" id="bottomLine" name="bottomLine" onchange="handleTextChange(event)">
+				</li>
+				<li>
+					<button name="submitButton" onclick="handleSubmit(event)">Submit</button>
+				</li>	
+			</ul>	
+		</form>
 	</div>
 	<canvas id="canvas" width="500" height="500"></canvas>
 </body>
