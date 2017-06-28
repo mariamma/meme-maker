@@ -46,21 +46,20 @@ function redrawMeme(image, topLine, bottomLine){
   var canvas = document.querySelector("canvas");
   var ctx = canvas.getContext("2d");
   console.log("Loaded image");
-  ctx.drawImage(image,0,0,canvas.width, canvas.height);
+  if(image != null)
+    ctx.drawImage(image,0,0,canvas.width, canvas.height);
 
   ctx.font = "36pt Impact";
   ctx.textAlign = "center";
   ctx.fillStyle = "white";
-  ctx.fillText(topLine ,canvas.width/2,50);
   ctx.strokeStyle = "black";
   ctx.lineWidth = 3;
-  ctx.strokeText(topLine ,canvas.width/2,50);
-
-  ctx.font = "36pt Impact";
-  ctx.textAlign = "center";
-  ctx.fillStyle = "white";
-  ctx.fillText(bottomLine ,canvas.width/2,canvas.height-50);
-  ctx.strokeStyle = "black";
-  ctx.lineWidth = 3;
-  ctx.strokeText(bottomLine ,canvas.width/2,canvas.height-50);
+  if(topLine != null){
+   ctx.fillText(topLine ,canvas.width/2,50);
+    ctx.strokeText(topLine ,canvas.width/2,50);
+  }
+  if(bottomLine != null){
+    ctx.fillText(bottomLine ,canvas.width/2,canvas.height-50);
+    ctx.strokeText(bottomLine ,canvas.width/2,canvas.height-50);
+  }
 }
